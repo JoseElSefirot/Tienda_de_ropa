@@ -48,6 +48,7 @@
             this.verDetallesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PnlContenedor = new System.Windows.Forms.Panel();
             this.MenuSeleccion.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,9 +64,9 @@
             this.MenuProveedores,
             this.MenuReportes});
             this.MenuSeleccion.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.MenuSeleccion.Location = new System.Drawing.Point(0, 47);
+            this.MenuSeleccion.Location = new System.Drawing.Point(0, 58);
             this.MenuSeleccion.Name = "MenuSeleccion";
-            this.MenuSeleccion.Size = new System.Drawing.Size(800, 65);
+            this.MenuSeleccion.Size = new System.Drawing.Size(1264, 65);
             this.MenuSeleccion.TabIndex = 1;
             this.MenuSeleccion.Text = "menuStrip2";
             // 
@@ -91,7 +92,7 @@
             this.MenuTitulo.Location = new System.Drawing.Point(0, 0);
             this.MenuTitulo.Name = "MenuTitulo";
             this.MenuTitulo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.MenuTitulo.Size = new System.Drawing.Size(800, 47);
+            this.MenuTitulo.Size = new System.Drawing.Size(1264, 58);
             this.MenuTitulo.TabIndex = 2;
             this.MenuTitulo.Text = "menuStrip3";
             // 
@@ -101,7 +102,7 @@
             this.label1.BackColor = System.Drawing.SystemColors.HotTrack;
             this.label1.Font = new System.Drawing.Font("Montserrat", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 2);
+            this.label1.Location = new System.Drawing.Point(12, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(293, 40);
             this.label1.TabIndex = 3;
@@ -113,7 +114,7 @@
             this.label2.BackColor = System.Drawing.SystemColors.HotTrack;
             this.label2.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(412, 16);
+            this.label2.Location = new System.Drawing.Point(738, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 18);
             this.label2.TabIndex = 4;
@@ -125,7 +126,7 @@
             this.LblUsuario.BackColor = System.Drawing.SystemColors.HotTrack;
             this.LblUsuario.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblUsuario.ForeColor = System.Drawing.Color.White;
-            this.LblUsuario.Location = new System.Drawing.Point(477, 16);
+            this.LblUsuario.Location = new System.Drawing.Point(803, 22);
             this.LblUsuario.Name = "LblUsuario";
             this.LblUsuario.Size = new System.Drawing.Size(82, 18);
             this.LblUsuario.TabIndex = 5;
@@ -255,11 +256,20 @@
             this.reporteVentaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.reporteVentaToolStripMenuItem.Text = "Reporte Venta";
             // 
+            // PnlContenedor
+            // 
+            this.PnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PnlContenedor.Location = new System.Drawing.Point(0, 123);
+            this.PnlContenedor.Name = "PnlContenedor";
+            this.PnlContenedor.Size = new System.Drawing.Size(1264, 558);
+            this.PnlContenedor.TabIndex = 6;
+            // 
             // Index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.PnlContenedor);
             this.Controls.Add(this.LblUsuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -296,6 +306,7 @@
         private System.Windows.Forms.ToolStripMenuItem verDetallesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteCompraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteVentaToolStripMenuItem;
+        private System.Windows.Forms.Panel PnlContenedor;
     }
 }
 
