@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Tienda_de_ropa
 {
-    public partial class frmDetalleVenta : Form
+    public partial class TbxMontoTotal : Form
     {
-        public frmDetalleVenta()
+        public TbxMontoTotal()
         {
             InitializeComponent();
         }
