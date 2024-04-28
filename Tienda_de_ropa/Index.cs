@@ -16,5 +16,10 @@ namespace Tienda_de_ropa
         {
             InitializeComponent();
         }
+
+        private void Index_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

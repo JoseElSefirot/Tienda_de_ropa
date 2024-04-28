@@ -101,19 +101,19 @@
             // categoriaToolStripMenuItem
             // 
             this.categoriaToolStripMenuItem.Name = "categoriaToolStripMenuItem";
-            this.categoriaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.categoriaToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.categoriaToolStripMenuItem.Text = "Categoria";
             // 
             // productoToolStripMenuItem
             // 
             this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
-            this.productoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.productoToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.productoToolStripMenuItem.Text = "Producto";
             // 
             // neñgToolStripMenuItem
             // 
             this.neñgToolStripMenuItem.Name = "neñgToolStripMenuItem";
-            this.neñgToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.neñgToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.neñgToolStripMenuItem.Text = "Negocio";
             // 
             // MenuVentas
@@ -278,6 +278,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Index";
             this.Text = "Inicio";
+            this.Load += new System.EventHandler(this.Index_Load);
             this.MenuSeleccion.ResumeLayout(false);
             this.MenuSeleccion.PerformLayout();
             this.ResumeLayout(false);
