@@ -146,12 +146,31 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="CN_Categoria.cs" />
+    <Compile Include="CN_Compra.cs" />
+    <Compile Include="CN_Negocio.cs" />
+    <Compile Include="CN_Permiso.cs" />
+    <Compile Include="CN_Producto.cs" />
+    <Compile Include="CN_Proveedor.cs" />
+    <Compile Include="CN_Reporte.cs" />
+    <Compile Include="CN_Rol.cs" />
+    <Compile Include="CN_Usuario.cs" />
+    <Compile Include="CN_Venta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
+      <Project>{7468e2e0-88f9-4efb-ad8c-680a64768334}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaEntidad\CapaEntidad.csproj">
+      <Project>{8a408da7-0d02-4ec5-84fa-707bad104ab9}</Project>
+      <Name>CapaEntidad</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />

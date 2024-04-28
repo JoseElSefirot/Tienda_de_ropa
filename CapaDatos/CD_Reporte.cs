@@ -91,8 +91,6 @@ namespace CapaDatos
                                 NumeroDocumento = dr["NumeroDocumento"].ToString(),
                                 MontoTotal = dr["MontoTotal"].ToString(),
                                 UsuarioRegistro = dr["UsuarioRegistro"].ToString(),
-                                DocumentoCliente = dr["DocumentoCliente"].ToString(),
-                                NombreCliente = dr["NombreCliente"].ToString(),
                                 CodigoProducto = dr["CodigoProducto"].ToString(),
                                 NombreProducto = dr["NombreProducto"].ToString(),
                                 Categoria = dr["Categoria"].ToString(),

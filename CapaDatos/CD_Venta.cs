@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CapaDatos
 {
-    internal class CD_Venta
+    public class CD_Venta
     {
         public int ObtenerCorrelativo()
         {
@@ -147,7 +147,6 @@ namespace CapaDatos
                     StringBuilder query = new StringBuilder();
 
                     query.AppendLine("select v.IdVenta,u.NombreCompleto,");
-                    query.AppendLine("v.DocumentoCliente,v.NombreCliente,");
                     query.AppendLine("v.TipoDocumento,v.NumeroDocumento,");
                     query.AppendLine("v.MontoPago,v.MontoCambio,v.MontoTotal,");
                     query.AppendLine("convert(char(10),v.FechaRegistro,103)[FechaRegistro]");

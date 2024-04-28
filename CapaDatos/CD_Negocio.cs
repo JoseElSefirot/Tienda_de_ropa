@@ -9,7 +9,7 @@ using System.Data.SqlClient;
 
 namespace CapaDatos
 {
-    internal class CD_Negocio
+    public class CD_Negocio
     {
         public Negocio ObtenerDatos()
         {
