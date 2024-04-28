@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CapaEntidad
 {
-    internal class Detalle_Venta
+    public class Detalle_Venta
     {
         public int IdDetalleVenta { get; set; }
         public Producto oProducto { get; set; }
