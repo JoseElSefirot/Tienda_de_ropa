@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CapaNegocio
 {
-    internal class CN_Rol
+    public class CN_Rol
     {
         private CD_Rol objcd_rol = new CD_Rol();
 

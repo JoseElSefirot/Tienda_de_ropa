@@ -10,6 +10,6 @@ namespace Tienda_de_ropa.Utilidades
     { 
         public string Texto { get; set; }
 
-        public string Valor { get; set; }
+        public object Valor { get; set; }
     }
 }
