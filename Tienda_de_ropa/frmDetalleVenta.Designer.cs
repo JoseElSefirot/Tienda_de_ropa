@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnDescargar = new FontAwesome.Sharp.IconButton();
             this.label6 = new System.Windows.Forms.Label();
             this.TbxMontoPago = new System.Windows.Forms.TextBox();
@@ -55,6 +55,7 @@
             this.BtnLimpiarBusqueda = new FontAwesome.Sharp.IconButton();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.TbxNumeroDocumento = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.DvgData)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -75,6 +76,7 @@
             this.BtnDescargar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnDescargar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnDescargar.UseVisualStyleBackColor = true;
+            this.BtnDescargar.Click += new System.EventHandler(this.BtnDescargar_Click);
             // 
             // label6
             // 
@@ -146,15 +148,15 @@
             // 
             this.DvgData.AllowUserToAddRows = false;
             this.DvgData.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DvgData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DvgData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.DvgData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DvgData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Producto,
@@ -165,9 +167,9 @@
             this.DvgData.MultiSelect = false;
             this.DvgData.Name = "DvgData";
             this.DvgData.ReadOnly = true;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.DvgData.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.DvgData.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.DvgData.RowTemplate.Height = 28;
             this.DvgData.Size = new System.Drawing.Size(582, 198);
             this.DvgData.TabIndex = 229;
@@ -291,6 +293,7 @@
             this.BtnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnBuscar.UseVisualStyleBackColor = true;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // label26
             // 
@@ -324,6 +327,7 @@
             this.BtnLimpiarBusqueda.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnLimpiarBusqueda.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnLimpiarBusqueda.UseVisualStyleBackColor = true;
+            this.BtnLimpiarBusqueda.Click += new System.EventHandler(this.BtnLimpiarBusqueda_Click);
             // 
             // label9
             // 
@@ -347,11 +351,20 @@
             this.label10.Size = new System.Drawing.Size(617, 483);
             this.label10.TabIndex = 221;
             // 
+            // TbxNumeroDocumento
+            // 
+            this.TbxNumeroDocumento.Location = new System.Drawing.Point(907, 252);
+            this.TbxNumeroDocumento.Name = "TbxNumeroDocumento";
+            this.TbxNumeroDocumento.Size = new System.Drawing.Size(54, 20);
+            this.TbxNumeroDocumento.TabIndex = 237;
+            this.TbxNumeroDocumento.Visible = false;
+            // 
             // frmDetalleVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1334, 567);
+            this.Controls.Add(this.TbxNumeroDocumento);
             this.Controls.Add(this.BtnDescargar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.TbxMontoPago);
@@ -369,6 +382,7 @@
             this.Controls.Add(this.label10);
             this.Name = "frmDetalleVenta";
             this.Text = "frmDetalleVenta";
+            this.Load += new System.EventHandler(this.frmDetalleVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DvgData)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -404,5 +418,6 @@
         private FontAwesome.Sharp.IconButton BtnLimpiarBusqueda;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox TbxNumeroDocumento;
     }
 }
