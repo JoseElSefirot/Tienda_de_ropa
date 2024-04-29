@@ -9,7 +9,7 @@ using CapaEntidad;
 
 namespace CapaNegocio
 {
-    internal class CN_Compra
+    public class CN_Compra
     {
         private CD_Compra objcd_compra = new CD_Compra();
 
