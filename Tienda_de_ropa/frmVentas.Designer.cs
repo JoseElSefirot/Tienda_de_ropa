@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PnlContenedorVentas = new System.Windows.Forms.Panel();
             this.BtnCrearVenta = new FontAwesome.Sharp.IconButton();
             this.label16 = new System.Windows.Forms.Label();
@@ -110,6 +110,7 @@
             this.BtnCrearVenta.Text = "Crear Venta";
             this.BtnCrearVenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnCrearVenta.UseVisualStyleBackColor = true;
+            this.BtnCrearVenta.Click += new System.EventHandler(this.BtnCrearVenta_Click);
             // 
             // label16
             // 
@@ -161,6 +162,8 @@
             this.TbxPagaCon.Name = "TbxPagaCon";
             this.TbxPagaCon.Size = new System.Drawing.Size(80, 21);
             this.TbxPagaCon.TabIndex = 213;
+            this.TbxPagaCon.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TbxPagaCon_KeyDown);
+            this.TbxPagaCon.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbxPagaCon_KeyPress);
             // 
             // TbxTotalaPagar
             // 
@@ -177,15 +180,15 @@
             // 
             this.DvgData.AllowUserToAddRows = false;
             this.DvgData.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DvgData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DvgData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.DvgData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DvgData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdProducto,
@@ -198,12 +201,14 @@
             this.DvgData.MultiSelect = false;
             this.DvgData.Name = "DvgData";
             this.DvgData.ReadOnly = true;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.DvgData.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
+            this.DvgData.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.DvgData.RowTemplate.Height = 28;
             this.DvgData.Size = new System.Drawing.Size(657, 224);
             this.DvgData.TabIndex = 202;
+            this.DvgData.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DvgData_CellContentClick);
+            this.DvgData.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DvgData_CellPainting);
             // 
             // IdProducto
             // 
@@ -260,6 +265,7 @@
             this.BtnAgregar.TabIndex = 2;
             this.BtnAgregar.Text = "iconButton1";
             this.BtnAgregar.UseVisualStyleBackColor = true;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // groupBox1
             // 
@@ -351,6 +357,7 @@
             this.BtnBuscarProducto.Size = new System.Drawing.Size(37, 23);
             this.BtnBuscarProducto.TabIndex = 103;
             this.BtnBuscarProducto.UseVisualStyleBackColor = true;
+            this.BtnBuscarProducto.Click += new System.EventHandler(this.BtnBuscarProducto_Click);
             // 
             // TbxCodigoProducto
             // 
@@ -358,6 +365,7 @@
             this.TbxCodigoProducto.Name = "TbxCodigoProducto";
             this.TbxCodigoProducto.Size = new System.Drawing.Size(133, 20);
             this.TbxCodigoProducto.TabIndex = 102;
+            this.TbxCodigoProducto.KeyDown += new System.Windows.Forms.KeyEventHandler(this.TbxCodigoProducto_KeyDown);
             // 
             // label9
             // 
@@ -439,6 +447,7 @@
             this.TbxPrecio.Name = "TbxPrecio";
             this.TbxPrecio.Size = new System.Drawing.Size(78, 20);
             this.TbxPrecio.TabIndex = 105;
+            this.TbxPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbxPrecio_KeyPress);
             // 
             // label6
             // 

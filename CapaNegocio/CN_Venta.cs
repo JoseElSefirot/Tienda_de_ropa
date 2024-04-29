@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace CapaNegocio
 {
-    internal class CN_Venta
+    public class CN_Venta
     {
         private CD_Venta objcd_venta = new CD_Venta();
 
