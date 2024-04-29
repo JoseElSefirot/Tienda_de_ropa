@@ -527,6 +527,7 @@
             this.Controls.Add(this.label10);
             this.Name = "frmCompras";
             this.Text = "frmCompras";
+            this.Load += new System.EventHandler(this.frmCompras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DvgData)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();

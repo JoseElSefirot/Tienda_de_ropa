@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaEntidad;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,16 @@ namespace Tienda_de_ropa
 {
     public partial class frmCompras : Form
     {
-        public frmCompras()
+        private Usuario _Usuario;
+        public frmCompras(Usuario oUsuario = null)
         {
+            _Usuario = oUsuario;
             InitializeComponent();
+        }
+
+        private void frmCompras_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

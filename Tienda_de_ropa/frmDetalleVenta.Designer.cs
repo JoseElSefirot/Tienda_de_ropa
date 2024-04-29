@@ -1,6 +1,6 @@
 ﻿namespace Tienda_de_ropa
 {
-    partial class TbxMontoTotal
+    partial class frmDetalleVenta
     {
         /// <summary>
         /// Required designer variable.
@@ -36,7 +36,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.TbxMontoCambio = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtmontototal = new System.Windows.Forms.TextBox();
+            this.TbxMontoTotal = new System.Windows.Forms.TextBox();
             this.DvgData = new System.Windows.Forms.DataGridView();
             this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -131,16 +131,16 @@
             this.label1.TabIndex = 230;
             this.label1.Text = "Monto Cambio:";
             // 
-            // txtmontototal
+            // TbxMontoTotal
             // 
-            this.txtmontototal.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.txtmontototal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtmontototal.Location = new System.Drawing.Point(464, 485);
-            this.txtmontototal.Name = "txtmontototal";
-            this.txtmontototal.ReadOnly = true;
-            this.txtmontototal.Size = new System.Drawing.Size(47, 21);
-            this.txtmontototal.TabIndex = 231;
-            this.txtmontototal.Text = "0";
+            this.TbxMontoTotal.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.TbxMontoTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbxMontoTotal.Location = new System.Drawing.Point(464, 485);
+            this.TbxMontoTotal.Name = "TbxMontoTotal";
+            this.TbxMontoTotal.ReadOnly = true;
+            this.TbxMontoTotal.Size = new System.Drawing.Size(47, 21);
+            this.TbxMontoTotal.TabIndex = 231;
+            this.TbxMontoTotal.Text = "0";
             // 
             // DvgData
             // 
@@ -347,7 +347,7 @@
             this.label10.Size = new System.Drawing.Size(617, 483);
             this.label10.TabIndex = 221;
             // 
-            // TbxMontoTotal
+            // frmDetalleVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -358,7 +358,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.TbxMontoCambio);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtmontototal);
+            this.Controls.Add(this.TbxMontoTotal);
             this.Controls.Add(this.DvgData);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BtnBuscar);
@@ -367,7 +367,7 @@
             this.Controls.Add(this.BtnLimpiarBusqueda);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
-            this.Name = "TbxMontoTotal";
+            this.Name = "frmDetalleVenta";
             this.Text = "frmDetalleVenta";
             ((System.ComponentModel.ISupportInitialize)(this.DvgData)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -385,7 +385,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox TbxMontoCambio;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtmontototal;
+        private System.Windows.Forms.TextBox TbxMontoTotal;
         private System.Windows.Forms.DataGridView DvgData;
         private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
