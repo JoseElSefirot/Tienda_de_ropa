@@ -108,6 +108,7 @@
             this.BtnGuardarCambios.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnGuardarCambios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnGuardarCambios.UseVisualStyleBackColor = true;
+            this.BtnGuardarCambios.Click += new System.EventHandler(this.BtnGuardarCambios_Click);
             // 
             // label3
             // 
@@ -157,6 +158,7 @@
             this.BtnSubir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnSubir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnSubir.UseVisualStyleBackColor = true;
+            this.BtnSubir.Click += new System.EventHandler(this.BtnSubir_Click);
             // 
             // label2
             // 
@@ -198,6 +200,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmNegocio";
             this.Text = "frmNegocio";
+            this.Load += new System.EventHandler(this.frmNegocio_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbxLogo)).EndInit();
