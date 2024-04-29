@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CapaNegocio
 {
-    internal class CN_Reporte
+    public class CN_Reporte
     {
         private CD_Reporte objcd_reporte = new CD_Reporte();
 

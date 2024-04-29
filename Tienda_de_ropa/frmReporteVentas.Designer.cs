@@ -28,23 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.BtnExportarReporte = new FontAwesome.Sharp.IconButton();
-            this.btnLimpiarBuscador = new FontAwesome.Sharp.IconButton();
+            this.BtnLimpiarBuscador = new FontAwesome.Sharp.IconButton();
             this.TbxBusqueda = new System.Windows.Forms.TextBox();
             this.CbxBusqueda = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.BtnBusqueda = new FontAwesome.Sharp.IconButton();
             this.DvgData = new System.Windows.Forms.DataGridView();
-            this.BtnBuscarReporte = new FontAwesome.Sharp.IconButton();
-            this.CbxFechaFin = new System.Windows.Forms.DateTimePicker();
-            this.CbxFechaInicio = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.FechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumeroDocumento = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +50,12 @@
             this.PrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnBuscarReporte = new FontAwesome.Sharp.IconButton();
+            this.CbxFechaFin = new System.Windows.Forms.DateTimePicker();
+            this.CbxFechaInicio = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DvgData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -101,24 +101,26 @@
             this.BtnExportarReporte.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnExportarReporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnExportarReporte.UseVisualStyleBackColor = false;
+            this.BtnExportarReporte.Click += new System.EventHandler(this.BtnExportarReporte_Click);
             // 
-            // btnLimpiarBuscador
+            // BtnLimpiarBuscador
             // 
-            this.btnLimpiarBuscador.BackColor = System.Drawing.Color.White;
-            this.btnLimpiarBuscador.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLimpiarBuscador.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnLimpiarBuscador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiarBuscador.ForeColor = System.Drawing.Color.Black;
-            this.btnLimpiarBuscador.IconChar = FontAwesome.Sharp.IconChar.Broom;
-            this.btnLimpiarBuscador.IconColor = System.Drawing.Color.Black;
-            this.btnLimpiarBuscador.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLimpiarBuscador.IconSize = 18;
-            this.btnLimpiarBuscador.Location = new System.Drawing.Point(1174, 146);
-            this.btnLimpiarBuscador.Name = "btnLimpiarBuscador";
-            this.btnLimpiarBuscador.Size = new System.Drawing.Size(42, 23);
-            this.btnLimpiarBuscador.TabIndex = 254;
-            this.btnLimpiarBuscador.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnLimpiarBuscador.UseVisualStyleBackColor = false;
+            this.BtnLimpiarBuscador.BackColor = System.Drawing.Color.White;
+            this.BtnLimpiarBuscador.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnLimpiarBuscador.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.BtnLimpiarBuscador.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnLimpiarBuscador.ForeColor = System.Drawing.Color.Black;
+            this.BtnLimpiarBuscador.IconChar = FontAwesome.Sharp.IconChar.Broom;
+            this.BtnLimpiarBuscador.IconColor = System.Drawing.Color.Black;
+            this.BtnLimpiarBuscador.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnLimpiarBuscador.IconSize = 18;
+            this.BtnLimpiarBuscador.Location = new System.Drawing.Point(1174, 146);
+            this.BtnLimpiarBuscador.Name = "BtnLimpiarBuscador";
+            this.BtnLimpiarBuscador.Size = new System.Drawing.Size(42, 23);
+            this.BtnLimpiarBuscador.TabIndex = 254;
+            this.BtnLimpiarBuscador.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnLimpiarBuscador.UseVisualStyleBackColor = false;
+            this.BtnLimpiarBuscador.Click += new System.EventHandler(this.BtnLimpiarBuscador_Click);
             // 
             // TbxBusqueda
             // 
@@ -162,20 +164,21 @@
             this.BtnBusqueda.Size = new System.Drawing.Size(42, 23);
             this.BtnBusqueda.TabIndex = 253;
             this.BtnBusqueda.UseVisualStyleBackColor = false;
+            this.BtnBusqueda.Click += new System.EventHandler(this.BtnBusqueda_Click);
             // 
             // DvgData
             // 
             this.DvgData.AllowUserToAddRows = false;
             this.DvgData.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DvgData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DvgData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.DvgData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DvgData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FechaRegistro,
@@ -193,79 +196,12 @@
             this.DvgData.MultiSelect = false;
             this.DvgData.Name = "DvgData";
             this.DvgData.ReadOnly = true;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.DvgData.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
+            this.DvgData.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.DvgData.RowTemplate.Height = 28;
             this.DvgData.Size = new System.Drawing.Size(1099, 329);
             this.DvgData.TabIndex = 249;
-            // 
-            // BtnBuscarReporte
-            // 
-            this.BtnBuscarReporte.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnBuscarReporte.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
-            this.BtnBuscarReporte.IconColor = System.Drawing.Color.Black;
-            this.BtnBuscarReporte.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.BtnBuscarReporte.IconSize = 17;
-            this.BtnBuscarReporte.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.BtnBuscarReporte.Location = new System.Drawing.Point(494, 90);
-            this.BtnBuscarReporte.Name = "BtnBuscarReporte";
-            this.BtnBuscarReporte.Size = new System.Drawing.Size(78, 21);
-            this.BtnBuscarReporte.TabIndex = 248;
-            this.BtnBuscarReporte.Text = "Buscar";
-            this.BtnBuscarReporte.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnBuscarReporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnBuscarReporte.UseVisualStyleBackColor = true;
-            // 
-            // CbxFechaFin
-            // 
-            this.CbxFechaFin.CustomFormat = "dd/MM/yyyy";
-            this.CbxFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.CbxFechaFin.Location = new System.Drawing.Point(382, 90);
-            this.CbxFechaFin.Name = "CbxFechaFin";
-            this.CbxFechaFin.Size = new System.Drawing.Size(97, 20);
-            this.CbxFechaFin.TabIndex = 247;
-            // 
-            // CbxFechaInicio
-            // 
-            this.CbxFechaInicio.CustomFormat = "dd/MM/yyyy";
-            this.CbxFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.CbxFechaInicio.Location = new System.Drawing.Point(194, 90);
-            this.CbxFechaInicio.Name = "CbxFechaInicio";
-            this.CbxFechaInicio.Size = new System.Drawing.Size(97, 20);
-            this.CbxFechaInicio.TabIndex = 245;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(120, 92);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 13);
-            this.label4.TabIndex = 246;
-            this.label4.Text = "Fecha Inicio:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(312, 90);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 15);
-            this.label3.TabIndex = 244;
-            this.label3.Text = "Fecha Fin:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(117, 53);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 25);
-            this.label2.TabIndex = 243;
-            this.label2.Text = "Reporte Ventas";
             // 
             // FechaRegistro
             // 
@@ -333,13 +269,81 @@
             this.SubTotal.Name = "SubTotal";
             this.SubTotal.ReadOnly = true;
             // 
+            // BtnBuscarReporte
+            // 
+            this.BtnBuscarReporte.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnBuscarReporte.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.BtnBuscarReporte.IconColor = System.Drawing.Color.Black;
+            this.BtnBuscarReporte.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.BtnBuscarReporte.IconSize = 17;
+            this.BtnBuscarReporte.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.BtnBuscarReporte.Location = new System.Drawing.Point(494, 90);
+            this.BtnBuscarReporte.Name = "BtnBuscarReporte";
+            this.BtnBuscarReporte.Size = new System.Drawing.Size(78, 21);
+            this.BtnBuscarReporte.TabIndex = 248;
+            this.BtnBuscarReporte.Text = "Buscar";
+            this.BtnBuscarReporte.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnBuscarReporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnBuscarReporte.UseVisualStyleBackColor = true;
+            this.BtnBuscarReporte.Click += new System.EventHandler(this.BtnBuscarReporte_Click);
+            // 
+            // CbxFechaFin
+            // 
+            this.CbxFechaFin.CustomFormat = "dd/MM/yyyy";
+            this.CbxFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.CbxFechaFin.Location = new System.Drawing.Point(382, 90);
+            this.CbxFechaFin.Name = "CbxFechaFin";
+            this.CbxFechaFin.Size = new System.Drawing.Size(97, 20);
+            this.CbxFechaFin.TabIndex = 247;
+            // 
+            // CbxFechaInicio
+            // 
+            this.CbxFechaInicio.CustomFormat = "dd/MM/yyyy";
+            this.CbxFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.CbxFechaInicio.Location = new System.Drawing.Point(194, 90);
+            this.CbxFechaInicio.Name = "CbxFechaInicio";
+            this.CbxFechaInicio.Size = new System.Drawing.Size(97, 20);
+            this.CbxFechaInicio.TabIndex = 245;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(120, 92);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(68, 13);
+            this.label4.TabIndex = 246;
+            this.label4.Text = "Fecha Inicio:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(312, 90);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 15);
+            this.label3.TabIndex = 244;
+            this.label3.Text = "Fecha Fin:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(117, 53);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(147, 25);
+            this.label2.TabIndex = 243;
+            this.label2.Text = "Reporte Ventas";
+            // 
             // frmReporteVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1334, 567);
             this.Controls.Add(this.BtnExportarReporte);
-            this.Controls.Add(this.btnLimpiarBuscador);
+            this.Controls.Add(this.BtnLimpiarBuscador);
             this.Controls.Add(this.TbxBusqueda);
             this.Controls.Add(this.CbxBusqueda);
             this.Controls.Add(this.label11);
@@ -355,6 +359,7 @@
             this.Controls.Add(this.label10);
             this.Name = "frmReporteVentas";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.frmReporteVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DvgData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -366,7 +371,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label10;
         private FontAwesome.Sharp.IconButton BtnExportarReporte;
-        private FontAwesome.Sharp.IconButton btnLimpiarBuscador;
+        private FontAwesome.Sharp.IconButton BtnLimpiarBuscador;
         private System.Windows.Forms.TextBox TbxBusqueda;
         private System.Windows.Forms.ComboBox CbxBusqueda;
         private System.Windows.Forms.Label label11;
