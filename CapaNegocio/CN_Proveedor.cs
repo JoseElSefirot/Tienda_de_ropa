@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CapaNegocio
 {
-    internal class CN_Proveedor
+    public class CN_Proveedor
     {
         private CD_Proveedor objcd_Proveedor = new CD_Proveedor();
 

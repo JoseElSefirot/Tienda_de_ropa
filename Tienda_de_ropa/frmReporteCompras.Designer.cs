@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnExportarReporte = new FontAwesome.Sharp.IconButton();
             this.BtnBuscar = new FontAwesome.Sharp.IconButton();
             this.btnLimpiarBuscador = new FontAwesome.Sharp.IconButton();
@@ -82,6 +82,7 @@
             this.BtnExportarReporte.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnExportarReporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnExportarReporte.UseVisualStyleBackColor = false;
+            this.BtnExportarReporte.Click += new System.EventHandler(this.BtnExportarReporte_Click);
             // 
             // BtnBuscar
             // 
@@ -99,6 +100,7 @@
             this.BtnBuscar.Size = new System.Drawing.Size(42, 23);
             this.BtnBuscar.TabIndex = 238;
             this.BtnBuscar.UseVisualStyleBackColor = false;
+            this.BtnBuscar.Click += new System.EventHandler(this.BtnBuscar_Click);
             // 
             // btnLimpiarBuscador
             // 
@@ -117,6 +119,7 @@
             this.btnLimpiarBuscador.TabIndex = 239;
             this.btnLimpiarBuscador.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLimpiarBuscador.UseVisualStyleBackColor = false;
+            this.btnLimpiarBuscador.Click += new System.EventHandler(this.btnLimpiarBuscador_Click);
             // 
             // tbxBusqueda
             // 
@@ -148,15 +151,15 @@
             // 
             this.DvgData.AllowUserToAddRows = false;
             this.DvgData.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DvgData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DvgData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.DvgData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DvgData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.FechaRegistro,
@@ -177,9 +180,9 @@
             this.DvgData.MultiSelect = false;
             this.DvgData.Name = "DvgData";
             this.DvgData.ReadOnly = true;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.DvgData.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
+            this.DvgData.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.DvgData.RowTemplate.Height = 28;
             this.DvgData.Size = new System.Drawing.Size(1099, 329);
             this.DvgData.TabIndex = 234;
@@ -296,6 +299,7 @@
             this.BtnBuscarResultado.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnBuscarResultado.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnBuscarResultado.UseVisualStyleBackColor = true;
+            this.BtnBuscarResultado.Click += new System.EventHandler(this.BtnBuscarResultado_Click);
             // 
             // CbxProveedor
             // 
@@ -403,6 +407,7 @@
             this.Controls.Add(this.label10);
             this.Name = "frmReporteCompras";
             this.Text = "frmReporteCompras";
+            this.Load += new System.EventHandler(this.frmReporteCompras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DvgData)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
