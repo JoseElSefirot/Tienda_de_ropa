@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.TbxContrasena = new System.Windows.Forms.TextBox();
             this.TbxIdUsuario = new System.Windows.Forms.TextBox();
             this.LblLogin = new System.Windows.Forms.Label();
@@ -35,18 +36,22 @@
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.LblIdUsuarioLogin = new System.Windows.Forms.Label();
             this.LblContrasenaUsuario = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // TbxContrasena
             // 
-            this.TbxContrasena.Location = new System.Drawing.Point(37, 271);
+            this.TbxContrasena.Location = new System.Drawing.Point(22, 287);
             this.TbxContrasena.Name = "TbxContrasena";
             this.TbxContrasena.Size = new System.Drawing.Size(219, 20);
             this.TbxContrasena.TabIndex = 7;
             // 
             // TbxIdUsuario
             // 
-            this.TbxIdUsuario.Location = new System.Drawing.Point(37, 210);
+            this.TbxIdUsuario.Location = new System.Drawing.Point(22, 216);
             this.TbxIdUsuario.Name = "TbxIdUsuario";
             this.TbxIdUsuario.Size = new System.Drawing.Size(219, 20);
             this.TbxIdUsuario.TabIndex = 6;
@@ -54,75 +59,126 @@
             // LblLogin
             // 
             this.LblLogin.AutoSize = true;
-            this.LblLogin.Font = new System.Drawing.Font("Montserrat", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblLogin.Location = new System.Drawing.Point(95, 34);
+            this.LblLogin.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblLogin.ForeColor = System.Drawing.Color.White;
+            this.LblLogin.Location = new System.Drawing.Point(59, 60);
             this.LblLogin.Name = "LblLogin";
-            this.LblLogin.Size = new System.Drawing.Size(103, 40);
+            this.LblLogin.Size = new System.Drawing.Size(172, 34);
             this.LblLogin.TabIndex = 5;
-            this.LblLogin.Text = "Login";
+            this.LblLogin.Text = "Bienvenido";
             // 
             // btnIngresar
             // 
+            this.btnIngresar.BackColor = System.Drawing.Color.LimeGreen;
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnIngresar.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngresar.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnIngresar.IconChar = FontAwesome.Sharp.IconChar.Airbnb;
             this.btnIngresar.IconColor = System.Drawing.Color.Black;
             this.btnIngresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnIngresar.IconSize = 20;
-            this.btnIngresar.Location = new System.Drawing.Point(37, 340);
+            this.btnIngresar.Location = new System.Drawing.Point(12, 367);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(219, 25);
+            this.btnIngresar.Size = new System.Drawing.Size(122, 25);
             this.btnIngresar.TabIndex = 9;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnIngresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnIngresar.UseVisualStyleBackColor = true;
+            this.btnIngresar.UseVisualStyleBackColor = false;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // btnCancelar
             // 
+            this.btnCancelar.BackColor = System.Drawing.Color.Red;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnCancelar.Font = new System.Drawing.Font("Montserrat", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Airbnb;
             this.btnCancelar.IconColor = System.Drawing.Color.Black;
             this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCancelar.IconSize = 20;
-            this.btnCancelar.Location = new System.Drawing.Point(37, 390);
+            this.btnCancelar.Location = new System.Drawing.Point(176, 367);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(219, 25);
+            this.btnCancelar.Size = new System.Drawing.Size(99, 25);
             this.btnCancelar.TabIndex = 10;
             this.btnCancelar.Text = "Cancelar ";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // LblIdUsuarioLogin
             // 
             this.LblIdUsuarioLogin.AutoSize = true;
-            this.LblIdUsuarioLogin.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblIdUsuarioLogin.Location = new System.Drawing.Point(87, 176);
+            this.LblIdUsuarioLogin.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblIdUsuarioLogin.ForeColor = System.Drawing.Color.White;
+            this.LblIdUsuarioLogin.Location = new System.Drawing.Point(61, 188);
             this.LblIdUsuarioLogin.Name = "LblIdUsuarioLogin";
-            this.LblIdUsuarioLogin.Size = new System.Drawing.Size(121, 22);
+            this.LblIdUsuarioLogin.Size = new System.Drawing.Size(165, 22);
             this.LblIdUsuarioLogin.TabIndex = 11;
-            this.LblIdUsuarioLogin.Text = "Id de Usuario";
+            this.LblIdUsuarioLogin.Text = "Ingresar Usuario";
             // 
             // LblContrasenaUsuario
             // 
             this.LblContrasenaUsuario.AutoSize = true;
-            this.LblContrasenaUsuario.Font = new System.Drawing.Font("Montserrat", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblContrasenaUsuario.Location = new System.Drawing.Point(93, 239);
+            this.LblContrasenaUsuario.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LblContrasenaUsuario.ForeColor = System.Drawing.Color.White;
+            this.LblContrasenaUsuario.Location = new System.Drawing.Point(61, 259);
             this.LblContrasenaUsuario.Name = "LblContrasenaUsuario";
-            this.LblContrasenaUsuario.Size = new System.Drawing.Size(105, 22);
+            this.LblContrasenaUsuario.Size = new System.Drawing.Size(221, 22);
             this.LblContrasenaUsuario.TabIndex = 12;
-            this.LblContrasenaUsuario.Text = "Contraseña";
+            this.LblContrasenaUsuario.Text = "Ingrese su Contraseña";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.Location = new System.Drawing.Point(97, 97);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(73, 64);
+            this.panel1.TabIndex = 13;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel2.Location = new System.Drawing.Point(12, 12);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(58, 45);
+            this.panel2.TabIndex = 14;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel3.Location = new System.Drawing.Point(28, 185);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(27, 25);
+            this.panel3.TabIndex = 15;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel4.Location = new System.Drawing.Point(22, 256);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(33, 25);
+            this.panel4.TabIndex = 15;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(45)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(287, 450);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.LblContrasenaUsuario);
             this.Controls.Add(this.LblIdUsuarioLogin);
             this.Controls.Add(this.btnCancelar);
@@ -147,5 +203,9 @@
         private FontAwesome.Sharp.IconButton btnCancelar;
         private System.Windows.Forms.Label LblIdUsuarioLogin;
         private System.Windows.Forms.Label LblContrasenaUsuario;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
     }
 }

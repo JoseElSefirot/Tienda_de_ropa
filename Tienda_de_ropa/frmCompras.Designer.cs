@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCompras));
             this.BtnRegistrar = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.TbxTotalAPagar = new System.Windows.Forms.TextBox();
@@ -69,6 +70,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.DvgData)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TxtCantidad)).BeginInit();
@@ -78,7 +80,9 @@
             // 
             // BtnRegistrar
             // 
+            this.BtnRegistrar.BackColor = System.Drawing.Color.YellowGreen;
             this.BtnRegistrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnRegistrar.IconChar = FontAwesome.Sharp.IconChar.Tag;
             this.BtnRegistrar.IconColor = System.Drawing.Color.DodgerBlue;
             this.BtnRegistrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -91,13 +95,13 @@
             this.BtnRegistrar.TabIndex = 213;
             this.BtnRegistrar.Text = "Registrar";
             this.BtnRegistrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnRegistrar.UseVisualStyleBackColor = true;
+            this.BtnRegistrar.UseVisualStyleBackColor = false;
             this.BtnRegistrar.Click += new System.EventHandler(this.BtnRegistrar_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(948, 408);
             this.label1.Name = "label1";
@@ -118,7 +122,9 @@
             // 
             // BtnAgregarProducto
             // 
+            this.BtnAgregarProducto.BackColor = System.Drawing.Color.YellowGreen;
             this.BtnAgregarProducto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnAgregarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnAgregarProducto.IconChar = FontAwesome.Sharp.IconChar.Add;
             this.BtnAgregarProducto.IconColor = System.Drawing.Color.ForestGreen;
             this.BtnAgregarProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -130,22 +136,22 @@
             this.BtnAgregarProducto.TabIndex = 210;
             this.BtnAgregarProducto.Text = "Agregar";
             this.BtnAgregarProducto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.BtnAgregarProducto.UseVisualStyleBackColor = true;
+            this.BtnAgregarProducto.UseVisualStyleBackColor = false;
             this.BtnAgregarProducto.Click += new System.EventHandler(this.BtnAgregarProducto_Click);
             // 
             // DvgData
             // 
             this.DvgData.AllowUserToAddRows = false;
             this.DvgData.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DvgData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DvgData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DvgData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DvgData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdProducto,
@@ -159,9 +165,9 @@
             this.DvgData.MultiSelect = false;
             this.DvgData.Name = "DvgData";
             this.DvgData.ReadOnly = true;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            this.DvgData.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.DvgData.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.DvgData.RowTemplate.Height = 28;
             this.DvgData.Size = new System.Drawing.Size(657, 224);
             this.DvgData.TabIndex = 209;
@@ -220,7 +226,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.BackColor = System.Drawing.Color.White;
+            this.groupBox3.BackColor = System.Drawing.Color.Aqua;
             this.groupBox3.Controls.Add(this.TbxIdProducto);
             this.groupBox3.Controls.Add(this.BtnBuscarProducto);
             this.groupBox3.Controls.Add(this.TbxCodigoProducto);
@@ -250,6 +256,8 @@
             // 
             // BtnBuscarProducto
             // 
+            this.BtnBuscarProducto.BackColor = System.Drawing.Color.Yellow;
+            this.BtnBuscarProducto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnBuscarProducto.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
             this.BtnBuscarProducto.IconColor = System.Drawing.Color.Black;
             this.BtnBuscarProducto.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -259,7 +267,7 @@
             this.BtnBuscarProducto.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.BtnBuscarProducto.Size = new System.Drawing.Size(37, 23);
             this.BtnBuscarProducto.TabIndex = 2;
-            this.BtnBuscarProducto.UseVisualStyleBackColor = true;
+            this.BtnBuscarProducto.UseVisualStyleBackColor = false;
             this.BtnBuscarProducto.Click += new System.EventHandler(this.BtnBuscarProducto_Click);
             // 
             // TbxCodigoProducto
@@ -363,7 +371,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.White;
+            this.groupBox2.BackColor = System.Drawing.Color.Aqua;
             this.groupBox2.Controls.Add(this.TxtIdProveedor2);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.TbxIdProveedor);
@@ -389,7 +397,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.White;
+            this.label14.BackColor = System.Drawing.Color.Aqua;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(6, 20);
             this.label14.Name = "label14";
@@ -408,6 +416,8 @@
             // 
             // BtnBuscarProveedor
             // 
+            this.BtnBuscarProveedor.BackColor = System.Drawing.Color.Yellow;
+            this.BtnBuscarProveedor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.BtnBuscarProveedor.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
             this.BtnBuscarProveedor.IconColor = System.Drawing.Color.Black;
             this.BtnBuscarProveedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -417,7 +427,7 @@
             this.BtnBuscarProveedor.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.BtnBuscarProveedor.Size = new System.Drawing.Size(37, 23);
             this.BtnBuscarProveedor.TabIndex = 87;
-            this.BtnBuscarProveedor.UseVisualStyleBackColor = true;
+            this.BtnBuscarProveedor.UseVisualStyleBackColor = false;
             this.BtnBuscarProveedor.Click += new System.EventHandler(this.BtnBuscarProveedor_Click);
             // 
             // TbxNombreProveedor
@@ -432,7 +442,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.White;
+            this.label15.BackColor = System.Drawing.Color.Aqua;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(191, 20);
             this.label15.Name = "label15";
@@ -442,7 +452,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.BackColor = System.Drawing.Color.Aqua;
             this.groupBox1.Controls.Add(this.TbxFecha);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.CbxTipoDocumento);
@@ -467,7 +477,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.BackColor = System.Drawing.Color.Aqua;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(6, 20);
             this.label3.Name = "label3";
@@ -489,7 +499,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.BackColor = System.Drawing.Color.Aqua;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(141, 20);
             this.label4.Name = "label4";
@@ -500,7 +510,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.BackColor = System.Drawing.Color.DarkTurquoise;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(283, 61);
             this.label2.Name = "label2";
@@ -510,7 +520,7 @@
             // 
             // label10
             // 
-            this.label10.BackColor = System.Drawing.Color.White;
+            this.label10.BackColor = System.Drawing.Color.DarkTurquoise;
             this.label10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(270, 50);
@@ -519,11 +529,22 @@
             this.label10.Size = new System.Drawing.Size(794, 467);
             this.label10.TabIndex = 204;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.Location = new System.Drawing.Point(964, 267);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(82, 85);
+            this.panel1.TabIndex = 214;
+            // 
             // frmCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1334, 567);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.BtnRegistrar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TbxTotalAPagar);
@@ -591,5 +612,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel1;
     }
 }
