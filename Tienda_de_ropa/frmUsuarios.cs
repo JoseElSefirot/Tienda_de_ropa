@@ -275,5 +275,10 @@ namespace Tienda_de_ropa
         {
             Limpiar();
         }
+
+        private void CbxEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
