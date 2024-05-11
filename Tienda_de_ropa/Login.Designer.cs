@@ -45,16 +45,20 @@
             // TbxContrasena
             // 
             this.TbxContrasena.Location = new System.Drawing.Point(22, 287);
+            this.TbxContrasena.MaxLength = 64;
             this.TbxContrasena.Name = "TbxContrasena";
             this.TbxContrasena.Size = new System.Drawing.Size(219, 20);
             this.TbxContrasena.TabIndex = 7;
+            this.TbxContrasena.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbxContrasena_KeyPress);
             // 
             // TbxIdUsuario
             // 
             this.TbxIdUsuario.Location = new System.Drawing.Point(22, 216);
+            this.TbxIdUsuario.MaxLength = 64;
             this.TbxIdUsuario.Name = "TbxIdUsuario";
             this.TbxIdUsuario.Size = new System.Drawing.Size(219, 20);
             this.TbxIdUsuario.TabIndex = 6;
+            this.TbxIdUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbxIdUsuario_KeyPress);
             // 
             // LblLogin
             // 
@@ -73,10 +77,10 @@
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnIngresar.IconChar = FontAwesome.Sharp.IconChar.Airbnb;
+            this.btnIngresar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnIngresar.IconColor = System.Drawing.Color.Black;
             this.btnIngresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnIngresar.IconSize = 20;
+            this.btnIngresar.IconSize = 1;
             this.btnIngresar.Location = new System.Drawing.Point(12, 367);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(122, 25);
@@ -93,10 +97,10 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Airbnb;
+            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnCancelar.IconColor = System.Drawing.Color.Black;
             this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCancelar.IconSize = 20;
+            this.btnCancelar.IconSize = 1;
             this.btnCancelar.Location = new System.Drawing.Point(176, 367);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(99, 25);

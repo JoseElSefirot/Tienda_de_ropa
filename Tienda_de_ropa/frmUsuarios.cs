@@ -76,9 +76,9 @@ namespace Tienda_de_ropa
             {
                 IdUsuario = Convert.ToInt32(TxtId.Text),
                 Documento = TbxIdUsuario.Text,
-                NombreCompleto = TbxNombreCompleto.Text,
+                NombreCompleto =TbxNombreCompleto.Text,
                 Correo = TbxCorreo.Text,
-                Clave = TbxContrasena.Text,
+                Clave = Encriptar(TbxContrasena.Text),
                 oRol = new Rol() { IdRol = Convert.ToInt32(((ObcionComboBox)CbxRol.SelectedItem).Valor) },
                 Estado = Convert.ToInt32(((ObcionComboBox)CbxEstado.SelectedItem).Valor) == 1 ? true : false
             };
@@ -117,7 +117,7 @@ namespace Tienda_de_ropa
                     row.Cells["Documento"].Value = TbxIdUsuario.Text;
                     row.Cells["NombreCompleto"].Value = TbxNombreCompleto.Text;
                     row.Cells["Correo"].Value = TbxCorreo.Text;
-                    row.Cells["Clave"].Value = TbxContrasena.Text;
+                    row.Cells["Clave"].Value = Encriptar(TbxContrasena.Text);
                     row.Cells["IdRol"].Value = ((ObcionComboBox)CbxRol.SelectedItem).Valor.ToString();
                     row.Cells["Rol"].Value = ((ObcionComboBox)CbxRol.SelectedItem).Texto.ToString();
                     row.Cells["EstadoValor"].Value = ((ObcionComboBox)CbxEstado.SelectedItem).Valor.ToString();
@@ -130,6 +130,14 @@ namespace Tienda_de_ropa
                     MessageBox.Show(mensaje);
                 }
             }
+        }
+
+        public string Encriptar(string _cadenaAencriptar)
+        {
+            string result = string.Empty;
+            byte[] encryted = System.Text.Encoding.Unicode.GetBytes(_cadenaAencriptar);
+            result = Convert.ToBase64String(encryted);
+            return result;
         }
 
         private void Limpiar()
