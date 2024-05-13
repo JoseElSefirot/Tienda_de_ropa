@@ -269,7 +269,7 @@ namespace Tienda_de_ropa
 
         private void BtnRegistrar_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(TbxIdProveedor.Text) == 0)
+            if (TbxIdProveedor.Text == "")
             {
                 MessageBox.Show("Debe seleccionar un proveedor", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
@@ -280,6 +280,7 @@ namespace Tienda_de_ropa
                 MessageBox.Show("Debe ingresar productos en la compra", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
+
 
             DataTable detalle_compra = new DataTable();
 
