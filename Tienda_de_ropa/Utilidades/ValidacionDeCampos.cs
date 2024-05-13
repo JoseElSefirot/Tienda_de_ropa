@@ -11,17 +11,25 @@ namespace Tienda_de_ropa.Utilidades
     {
         public static class ValidacionUtils
         {
+            public static bool ValidarLongitudUsuario(string nombreUsuario, int longitudMinima)
+            {
+                return nombreUsuario.Length >= longitudMinima;
+            }
+
+            public static bool ValidarLongitudContrasena(string contraseña, int longitudMinima)
+            {
+                return contraseña.Length >= longitudMinima;
+            }
+
         }
 
         public bool ValidarNombreUsuario(string nombreUsuario)
         {
-            // Verificar si el nombre de usuario contiene solo letras y números
             if (!Regex.IsMatch(nombreUsuario, @"^[a-zA-Z0-9]+$"))
             {
                 return false;
             }
 
-            // Verificar si la longitud del nombre de usuario es válida
             if (nombreUsuario.Length > 30)
             {
                 return false;
@@ -32,7 +40,7 @@ namespace Tienda_de_ropa.Utilidades
 
         public bool ValidarContraseña(string contraseña, int longitudMaxima)
         {
-            // Verificar si la longitud de la contraseña es válida
+            
             if (contraseña.Length > longitudMaxima)
             {
                 return false;
@@ -41,6 +49,11 @@ namespace Tienda_de_ropa.Utilidades
             return true;
         }
 
-
+        public bool ValidarCorreo(string email)
+        {
+            // Expresión regular para validar el formato del correo electrónico
+            string pattern = @"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$";
+            return Regex.IsMatch(email, pattern);
+        }
     }
 }

@@ -11,14 +11,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tienda_de_ropa.Utilidades;
+using static Tienda_de_ropa.Utilidades.ValidacionDeCampos;
 
 namespace Tienda_de_ropa
 {
     public partial class frmUsuarios : Form
     {
+        private ValidacionDeCampos validador = new ValidacionDeCampos();
         public frmUsuarios()
         {
             InitializeComponent();
+
         }
 
         private void frmUsuarios_Load(object sender, EventArgs e)
@@ -70,13 +73,53 @@ namespace Tienda_de_ropa
 
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
+            const int MIN_LONGITUD_USUARIO = 3;
+
+            // Limitar la longitud mínima de la contraseña a 6 caracteres
+            const int MIN_LONGITUD_CONTRASENA = 6;
+
+            string nombreUsuario = TbxIdUsuario.Text;
+            string contraseña = TbxContrasena.Text;
+            if (!ValidacionUtils.ValidarLongitudUsuario(TbxIdUsuario.Text, MIN_LONGITUD_USUARIO))
+            {
+                MessageBox.Show($"El nombre de usuario debe tener al menos {MIN_LONGITUD_USUARIO} caracteres", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TbxIdUsuario.Focus();
+                return;
+            }
+
+            // Validar longitud mínima de la contraseña
+            if (!ValidacionUtils.ValidarLongitudContrasena(TbxContrasena.Text, MIN_LONGITUD_CONTRASENA))
+            {
+                MessageBox.Show($"La contraseña debe tener al menos {MIN_LONGITUD_CONTRASENA} caracteres", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TbxContrasena.Focus();
+                return;
+            }
+
+            // Validar formato del correo electrónico
+            string email = TbxCorreo.Text.Trim();
+            if (!validador.ValidarCorreo(email))
+            {
+                MessageBox.Show("Por favor, ingrese un correo electrónico válido.", "Formato incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // Limpia el contenido del TextBox o toma alguna otra acción adecuada en caso de un formato incorrecto
+                TbxCorreo.Clear();
+                TbxCorreo.Focus();
+                return;
+            }
+
+            // Si todas las validaciones son exitosas, guardar al usuario
+            GuardarUsuario();
+
+        }
+
+        private void GuardarUsuario()
+        {
             string mensaje = string.Empty;
 
             Usuario objusuario = new Usuario()
             {
                 IdUsuario = Convert.ToInt32(TxtId.Text),
                 Documento = TbxIdUsuario.Text,
-                NombreCompleto =TbxNombreCompleto.Text,
+                NombreCompleto = TbxNombreCompleto.Text,
                 Correo = TbxCorreo.Text,
                 Clave = Encriptar(TbxContrasena.Text),
                 oRol = new Rol() { IdRol = Convert.ToInt32(((ObcionComboBox)CbxRol.SelectedItem).Valor) },
@@ -90,6 +133,7 @@ namespace Tienda_de_ropa
                 if (idusuariogenerado != 0)
                 {
 
+
                     DvgData.Rows.Add(new object[] {"",idusuariogenerado,TbxIdUsuario.Text,TbxNombreCompleto.Text,TbxCorreo.Text,TbxContrasena.Text,
                 ((ObcionComboBox)CbxRol.SelectedItem).Valor.ToString(),
                 ((ObcionComboBox)CbxRol.SelectedItem).Texto.ToString(),
@@ -102,6 +146,7 @@ namespace Tienda_de_ropa
                 else
                 {
                     MessageBox.Show(mensaje);
+
                 }
 
 
@@ -287,6 +332,51 @@ namespace Tienda_de_ropa
         private void CbxEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void TbxIdUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+              string nombreUsuario = TbxIdUsuario.Text;
+              if (!char.IsLetterOrDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+              {
+                  e.Handled = true;
+                  MessageBox.Show("El nombre de usuario solo puede contener letras y números", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+              }
+              if (TbxIdUsuario.Text.Length >= 30 && !char.IsControl(e.KeyChar))
+              {
+                  e.Handled = true;
+                  MessageBox.Show("El nombre de usuario no puede tener más de 30 caracteres", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+              }
+        }
+
+        private void TbxContrasena_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            const int MAX_LONGITUD_CONTRASEÑA = 64;
+
+            string contraseña = TbxContrasena.Text + e.KeyChar;
+
+            if (contraseña.Length > MAX_LONGITUD_CONTRASEÑA && !char.IsControl(e.KeyChar)) 
+            {
+                e.Handled = true;
+                MessageBox.Show($"La contraseña no puede tener más de {MAX_LONGITUD_CONTRASEÑA} caracteres", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void TbxNombreCompleto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("El nombre de usuario solo puede contener letras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            if (TbxNombreCompleto.Text.Length >= 30 && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TbxCorreo_Leave(object sender, EventArgs e)
+        {
         }
     }
 }
