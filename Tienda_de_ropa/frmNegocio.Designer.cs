@@ -133,9 +133,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(17, 234);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(39, 13);
+            this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 113;
-            this.label4.Text = "R.U.C:";
+            this.label4.Text = "R.F.C:";
             // 
             // TbxRcu
             // 

@@ -99,6 +99,7 @@ namespace Tienda_de_ropa
             if (int.Parse(TbxidProducto.Text) == 0)
             {
                 MessageBox.Show("Debe seleccionar un producto", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                TbxidProducto.Focus();
                 return;
             }
 
@@ -114,6 +115,8 @@ namespace Tienda_de_ropa
                 MessageBox.Show("La cantidad no puede ser mayor al stock", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
+
+
 
 
             foreach (DataGridViewRow fila in DvgData.Rows)
@@ -289,7 +292,8 @@ namespace Tienda_de_ropa
 
                 if (pagacon < total)
                 {
-                    TbxCambio.Text = "0.00";
+                    MessageBox.Show("El pago no puede ser menor al total", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
                 }
                 else
                 {
@@ -311,6 +315,8 @@ namespace Tienda_de_ropa
 
         private void BtnCrearVenta_Click(object sender, EventArgs e)
         {
+            decimal pagaco = Convert.ToDecimal(TbxPagaCon.Text.Trim());
+            decimal total = Convert.ToDecimal(TbxTotalaPagar.Text);
 
             if (DvgData.Rows.Count < 1)
             {
@@ -318,7 +324,25 @@ namespace Tienda_de_ropa
                 return;
             }
 
+            if (TbxPagaCon.Text == "")
+            {
+                MessageBox.Show("Ingrese el monto de pago", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                TbxPagaCon.Focus();
+                return;
+            }
 
+            if (TbxPagaCon.Text == "")
+            {
+                MessageBox.Show("Ingrese el monto de pago", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                TbxPagaCon.Focus();
+                return;
+            }
+            if (pagaco < total)
+            {
+                MessageBox.Show("El pago no puede ser menor al total a pagar ", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                TbxPagaCon.Focus();
+                return;
+            }
 
             DataTable detalle_venta = new DataTable();
 
