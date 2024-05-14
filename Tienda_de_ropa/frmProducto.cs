@@ -84,6 +84,14 @@ namespace Tienda_de_ropa
         {
             string mensaje = string.Empty;
 
+            if (TbxNombre.Text == "")
+            {
+                MessageBox.Show("Ingrese un nombre para el producto.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                TbxNombre.Focus();
+                return;
+            }
+            
+
             Producto obj = new Producto()
             {
                 IdProducto = Convert.ToInt32(TbxId.Text),

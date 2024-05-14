@@ -82,7 +82,33 @@ namespace Tienda_de_ropa
                 MessageBox.Show("Los cambios fueron guardados", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
                 MessageBox.Show("No se pudo guardar los cambios", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            if (TbxNombre.Text == "")
+            {
+                MessageBox.Show("Ingrese un nombre", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                TbxNombre.Focus();
+                return;
+            }
+            if (TbxRcu.Text == "")
+            {
+                MessageBox.Show("Ingrese el RFC", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                TbxRcu.Focus();
+                return;
+            }
+            if (TbxDireccion.Text == "")
+            {
+                MessageBox.Show("Ingrese una direccion", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                TbxDireccion.Focus();
+                return;
+            }
 
+        }
+
+        private void TbxNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

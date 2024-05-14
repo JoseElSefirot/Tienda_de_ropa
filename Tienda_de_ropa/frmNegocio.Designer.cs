@@ -127,6 +127,7 @@
             this.TbxNombre.Name = "TbxNombre";
             this.TbxNombre.Size = new System.Drawing.Size(275, 20);
             this.TbxNombre.TabIndex = 112;
+            this.TbxNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbxNombre_KeyPress);
             // 
             // label4
             // 

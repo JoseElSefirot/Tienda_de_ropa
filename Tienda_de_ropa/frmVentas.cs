@@ -315,8 +315,7 @@ namespace Tienda_de_ropa
 
         private void BtnCrearVenta_Click(object sender, EventArgs e)
         {
-            decimal pagaco = Convert.ToDecimal(TbxPagaCon.Text.Trim());
-            decimal total = Convert.ToDecimal(TbxTotalaPagar.Text);
+            
 
             if (DvgData.Rows.Count < 1)
             {
@@ -324,6 +323,7 @@ namespace Tienda_de_ropa
                 return;
             }
 
+
             if (TbxPagaCon.Text == "")
             {
                 MessageBox.Show("Ingrese el monto de pago", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -337,12 +337,21 @@ namespace Tienda_de_ropa
                 TbxPagaCon.Focus();
                 return;
             }
+
+            if (TbxCodigoProducto.Text == "")
+            {
+                MessageBox.Show("Ingrese el monto de pago", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                TbxPagaCon.Focus();
+                return;
+            }
+            /*decimal pagaco = Convert.ToDecimal(TbxPagaCon.Text.Trim());
+            decimal total = Convert.ToDecimal(TbxTotalaPagar.Text);
             if (pagaco < total)
             {
                 MessageBox.Show("El pago no puede ser menor al total a pagar ", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 TbxPagaCon.Focus();
                 return;
-            }
+            }*/
 
             DataTable detalle_venta = new DataTable();
 

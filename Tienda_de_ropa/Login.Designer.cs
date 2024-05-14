@@ -49,6 +49,7 @@
             this.TbxContrasena.Name = "TbxContrasena";
             this.TbxContrasena.Size = new System.Drawing.Size(219, 20);
             this.TbxContrasena.TabIndex = 7;
+            this.TbxContrasena.UseSystemPasswordChar = true;
             this.TbxContrasena.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbxContrasena_KeyPress);
             // 
             // TbxIdUsuario

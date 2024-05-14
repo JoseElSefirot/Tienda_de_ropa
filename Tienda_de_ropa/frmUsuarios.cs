@@ -288,6 +288,7 @@ namespace Tienda_de_ropa
                     if (respuesta)
                     {
                         DvgData.Rows.RemoveAt(Convert.ToInt32(TxtIndice.Text));
+                        Limpiar();
                     }
                     else
                     {
