@@ -425,16 +425,20 @@
             // TbxNombre
             // 
             this.TbxNombre.Location = new System.Drawing.Point(34, 114);
+            this.TbxNombre.MaxLength = 30;
             this.TbxNombre.Name = "TbxNombre";
             this.TbxNombre.Size = new System.Drawing.Size(192, 20);
             this.TbxNombre.TabIndex = 215;
+            this.TbxNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbxNombre_KeyPress);
             // 
             // TbxCodigo
             // 
             this.TbxCodigo.Location = new System.Drawing.Point(34, 66);
+            this.TbxCodigo.MaxLength = 12;
             this.TbxCodigo.Name = "TbxCodigo";
             this.TbxCodigo.Size = new System.Drawing.Size(192, 20);
             this.TbxCodigo.TabIndex = 214;
+            this.TbxCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TbxCodigo_KeyPress);
             // 
             // label4
             // 
