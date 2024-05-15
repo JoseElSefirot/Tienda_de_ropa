@@ -15,6 +15,7 @@ namespace Tienda_de_ropa
 {
     public partial class frmProveedores : Form
     {
+        private ValidacionDeCampos validador = new ValidacionDeCampos();
         public frmProveedores()
         {
             InitializeComponent();
@@ -54,6 +55,16 @@ namespace Tienda_de_ropa
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
             string mensaje = string.Empty;
+
+            string email = tbxCorreo.Text.Trim();
+            if (!validador.ValidarCorreo(email))
+            {
+                MessageBox.Show("Por favor, ingrese un correo electrónico válido.", "Formato incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // Limpia el contenido del TextBox o toma alguna otra acción adecuada en caso de un formato incorrecto
+                tbxCorreo.Clear();
+                tbxCorreo.Focus();
+                return;
+            }
 
             Proveedor obj = new Proveedor()
             {
@@ -252,9 +263,10 @@ namespace Tienda_de_ropa
 
         private void tbxTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar))
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
             {
                 e.Handled = true;
+                return;
             }
         }
     }

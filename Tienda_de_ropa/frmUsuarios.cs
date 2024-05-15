@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tienda_de_ropa.Utilidades;
@@ -80,10 +81,23 @@ namespace Tienda_de_ropa
 
             string nombreUsuario = TbxIdUsuario.Text;
             string contraseña = TbxContrasena.Text;
-            if (!ValidacionUtils.ValidarLongitudUsuario(TbxIdUsuario.Text, MIN_LONGITUD_USUARIO))
+
+            string idUser = @"^[A-Z]{4}[0-9]{8}$";
+            Regex validado = new Regex(idUser);
+
+            string rfc = TbxIdUsuario.Text.Trim().ToUpper(); // Obtener RFC ingresado y convertir a mayúsculas
+            if (!validado.IsMatch(rfc))
+            {
+                MessageBox.Show($"El id de usuario deve tener el siguiente formato (ABCD12345678) las letras son iniciales y los numeros son identifiadores", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TbxIdUsuario.Focus();
+                return;
+            }
+           
+
+            if (!ValidacionUtils.ValidarLongitudUsuario(TbxNombreCompleto.Text, MIN_LONGITUD_USUARIO))
             {
                 MessageBox.Show($"El nombre de usuario debe tener al menos {MIN_LONGITUD_USUARIO} caracteres", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                TbxIdUsuario.Focus();
+                TbxNombreCompleto.Focus();
                 return;
             }
 
@@ -92,6 +106,13 @@ namespace Tienda_de_ropa
             {
                 MessageBox.Show($"La contraseña debe tener al menos {MIN_LONGITUD_CONTRASENA} caracteres", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 TbxContrasena.Focus();
+                return;
+            }
+
+            if(TbxContrasena.Text != TbxConfirmarContrasena.Text)
+            {
+                MessageBox.Show($"La contraseña no coincide", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TbxConfirmarContrasena.Focus();
                 return;
             }
 

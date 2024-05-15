@@ -84,13 +84,20 @@ namespace Tienda_de_ropa
         {
             string mensaje = string.Empty;
 
+
             if (TbxNombre.Text == "")
             {
                 MessageBox.Show("Ingrese un nombre para el producto.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 TbxNombre.Focus();
                 return;
             }
-            
+
+            if (TbxDescripcion.Text == "")
+            {
+                MessageBox.Show("Ingrese una descripcion para el producto.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                TbxDescripcion.Focus();
+                return;
+            }
 
             Producto obj = new Producto()
             {
@@ -356,7 +363,8 @@ namespace Tienda_de_ropa
 
         private void TbxCodigo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            // código de barras EAN-13 (Son solo numeros)
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
             {
                 e.Handled = true;
                 return;

@@ -141,6 +141,7 @@
             // TbxRcu
             // 
             this.TbxRcu.Location = new System.Drawing.Point(20, 250);
+            this.TbxRcu.MaxLength = 13;
             this.TbxRcu.Name = "TbxRcu";
             this.TbxRcu.Size = new System.Drawing.Size(275, 20);
             this.TbxRcu.TabIndex = 114;
@@ -224,10 +225,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TbxNombre;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox TbxRcu;
         private FontAwesome.Sharp.IconButton BtnSubir;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox PbxLogo;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox TbxRcu;
     }
 }

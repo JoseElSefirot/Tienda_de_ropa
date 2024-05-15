@@ -8,6 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -67,6 +68,26 @@ namespace Tienda_de_ropa
 
         private void BtnGuardarCambios_Click(object sender, EventArgs e)
         {
+            
+                // Expresión regular para validar RFC de persona física en México
+            string rfcPattern = @"^[A-Z]{4}[0-9]{6}[A-Z0-9]{3}$";
+            Regex regex = new Regex(rfcPattern);
+
+            string rfc = TbxRcu.Text.Trim().ToUpper(); // Obtener RFC ingresado y convertir a mayúsculas
+            if (regex.IsMatch(rfc))
+            {
+                Guardadr();
+            }
+            else
+            {
+                MessageBox.Show("RFC no válido", "Validación de RFC", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+        }
+
+        public void Guardadr()
+        {
             string mensaje = string.Empty;
 
             Negocio obj = new Negocio()
@@ -100,7 +121,6 @@ namespace Tienda_de_ropa
                 TbxDireccion.Focus();
                 return;
             }
-
         }
 
         private void TbxNombre_KeyPress(object sender, KeyPressEventArgs e)

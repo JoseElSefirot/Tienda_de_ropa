@@ -418,6 +418,7 @@
             // TbxDescripcion
             // 
             this.TbxDescripcion.Location = new System.Drawing.Point(34, 160);
+            this.TbxDescripcion.MaxLength = 256;
             this.TbxDescripcion.Name = "TbxDescripcion";
             this.TbxDescripcion.Size = new System.Drawing.Size(192, 20);
             this.TbxDescripcion.TabIndex = 216;
@@ -434,7 +435,7 @@
             // TbxCodigo
             // 
             this.TbxCodigo.Location = new System.Drawing.Point(34, 66);
-            this.TbxCodigo.MaxLength = 12;
+            this.TbxCodigo.MaxLength = 13;
             this.TbxCodigo.Name = "TbxCodigo";
             this.TbxCodigo.Size = new System.Drawing.Size(192, 20);
             this.TbxCodigo.TabIndex = 214;

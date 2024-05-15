@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsuarios));
             this.label10 = new System.Windows.Forms.Label();
             this.DvgData = new System.Windows.Forms.DataGridView();
@@ -91,15 +91,15 @@
             // 
             this.DvgData.AllowUserToAddRows = false;
             this.DvgData.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DvgData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DvgData.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.DvgData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DvgData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnseleccionar,
@@ -116,9 +116,9 @@
             this.DvgData.MultiSelect = false;
             this.DvgData.Name = "DvgData";
             this.DvgData.ReadOnly = true;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            this.DvgData.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            this.DvgData.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.DvgData.RowTemplate.Height = 28;
             this.DvgData.Size = new System.Drawing.Size(841, 372);
             this.DvgData.TabIndex = 22;
@@ -381,6 +381,7 @@
             // TbxConfirmarContrasena
             // 
             this.TbxConfirmarContrasena.Location = new System.Drawing.Point(31, 260);
+            this.TbxConfirmarContrasena.MaxLength = 64;
             this.TbxConfirmarContrasena.Name = "TbxConfirmarContrasena";
             this.TbxConfirmarContrasena.PasswordChar = '*';
             this.TbxConfirmarContrasena.Size = new System.Drawing.Size(192, 20);
@@ -389,6 +390,7 @@
             // TbxContrasena
             // 
             this.TbxContrasena.Location = new System.Drawing.Point(31, 213);
+            this.TbxContrasena.MaxLength = 64;
             this.TbxContrasena.Name = "TbxContrasena";
             this.TbxContrasena.PasswordChar = '*';
             this.TbxContrasena.Size = new System.Drawing.Size(192, 20);
@@ -398,6 +400,7 @@
             // TbxCorreo
             // 
             this.TbxCorreo.Location = new System.Drawing.Point(31, 166);
+            this.TbxCorreo.MaxLength = 64;
             this.TbxCorreo.Name = "TbxCorreo";
             this.TbxCorreo.Size = new System.Drawing.Size(192, 20);
             this.TbxCorreo.TabIndex = 31;
@@ -406,6 +409,7 @@
             // TbxNombreCompleto
             // 
             this.TbxNombreCompleto.Location = new System.Drawing.Point(31, 120);
+            this.TbxNombreCompleto.MaxLength = 30;
             this.TbxNombreCompleto.Name = "TbxNombreCompleto";
             this.TbxNombreCompleto.Size = new System.Drawing.Size(192, 20);
             this.TbxNombreCompleto.TabIndex = 30;
@@ -414,6 +418,7 @@
             // TbxIdUsuario
             // 
             this.TbxIdUsuario.Location = new System.Drawing.Point(31, 72);
+            this.TbxIdUsuario.MaxLength = 12;
             this.TbxIdUsuario.Name = "TbxIdUsuario";
             this.TbxIdUsuario.Size = new System.Drawing.Size(192, 20);
             this.TbxIdUsuario.TabIndex = 29;
