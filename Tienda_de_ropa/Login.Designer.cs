@@ -55,7 +55,7 @@
             // TbxIdUsuario
             // 
             this.TbxIdUsuario.Location = new System.Drawing.Point(22, 216);
-            this.TbxIdUsuario.MaxLength = 64;
+            this.TbxIdUsuario.MaxLength = 12;
             this.TbxIdUsuario.Name = "TbxIdUsuario";
             this.TbxIdUsuario.Size = new System.Drawing.Size(219, 20);
             this.TbxIdUsuario.TabIndex = 6;

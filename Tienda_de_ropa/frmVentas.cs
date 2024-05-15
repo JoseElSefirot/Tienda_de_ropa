@@ -331,27 +331,14 @@ namespace Tienda_de_ropa
                 return;
             }
 
-            if (TbxPagaCon.Text == "")
-            {
-                MessageBox.Show("Ingrese el monto de pago", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                TbxPagaCon.Focus();
-                return;
-            }
-
-            if (TbxCodigoProducto.Text == "")
-            {
-                MessageBox.Show("Ingrese el monto de pago", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                TbxPagaCon.Focus();
-                return;
-            }
             /*decimal pagaco = Convert.ToDecimal(TbxPagaCon.Text.Trim());
-            decimal total = Convert.ToDecimal(TbxTotalaPagar.Text);
-            if (pagaco < total)
+            decimal total = Convert.ToDecimal(TbxTotalaPagar.Text);*/
+            if (Convert.ToDecimal(TbxPagaCon.Text.Trim()) < Convert.ToDecimal(TbxTotalaPagar.Text))
             {
                 MessageBox.Show("El pago no puede ser menor al total a pagar ", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 TbxPagaCon.Focus();
                 return;
-            }*/
+            }
 
             DataTable detalle_venta = new DataTable();
 

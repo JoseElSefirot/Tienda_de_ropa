@@ -108,10 +108,31 @@ namespace Tienda_de_ropa
             decimal preciocompra = 0;
             decimal precioventa = 0;
             bool producto_existe = false;
+            Producto oproducto= new CN_Producto().Listar().Where(u => u.Codigo == TbxCodigoProducto.Text).FirstOrDefault();
+
+            
+            if (TbxIdProveedor.Text == "")
+            {
+                MessageBox.Show("Debe seleccionar un proveedor", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
 
             if (int.Parse(TbxIdProducto.Text) == 0)
             {
                 MessageBox.Show("Debe seleccionar un producto", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if (oproducto.Estado == false)
+            {
+                MessageBox.Show("El producto esta dado de baja, para poder comprarlo devera darlo nuevamente de alta.", "Cuenta inactiva", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (Convert.ToDecimal(TbxPrecioVenta.Text.Trim()) <= Convert.ToDecimal(TbxPrecioCompra.Text))
+            {
+                MessageBox.Show("El precio de compra no puede ser menor o igual al precio de venta", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                TbxPrecioVenta.Focus();
                 return;
             }
 
@@ -140,6 +161,7 @@ namespace Tienda_de_ropa
 
             if (!producto_existe)
             {
+
 
                 DvgData.Rows.Add(new object[] {
                     TbxIdProducto.Text,

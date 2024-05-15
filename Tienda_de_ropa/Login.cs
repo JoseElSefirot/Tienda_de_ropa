@@ -28,14 +28,21 @@ namespace Tienda_de_ropa
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-           
             Usuario ousuario = new CN_Usuario().Listar().Where(u => u.Documento == TbxIdUsuario.Text && u.Clave == Encriptar(TbxContrasena.Text)).FirstOrDefault();
+            
             if (ousuario != null)
             {
-                Index form = new Index(ousuario);
-                form.Show();
-                this.Hide();
-                form.FormClosing += frm_closing;
+                if (ousuario.Estado)
+                {
+                    Index form = new Index(ousuario);
+                    form.Show();
+                    this.Hide();
+                    form.FormClosing += frm_closing;
+                }
+                else
+                {
+                    MessageBox.Show("Tu cuenta está inactiva. Por favor, contacta al administrador.", "Cuenta inactiva", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             else
             {
