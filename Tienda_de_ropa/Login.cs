@@ -1,4 +1,5 @@
 ﻿using CapaEntidad;
+using CapaDatos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,26 +29,34 @@ namespace Tienda_de_ropa
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            Usuario ousuario = new CN_Usuario().Listar().Where(u => u.Documento == TbxIdUsuario.Text && u.Clave == Encriptar(TbxContrasena.Text)).FirstOrDefault();
-            
-            if (ousuario != null)
+            if (Conexion.ProbarConexion())
             {
-                if (ousuario.Estado)
+                Usuario ousuario = new CN_Usuario().Listar().Where(u => u.Documento == TbxIdUsuario.Text && u.Clave == Encriptar(TbxContrasena.Text)).FirstOrDefault();
+
+                if (ousuario != null)
                 {
-                    Index form = new Index(ousuario);
-                    form.Show();
-                    this.Hide();
-                    form.FormClosing += frm_closing;
+                    if (ousuario.Estado)
+                    {
+                        Index form = new Index(ousuario);
+                        form.Show();
+                        this.Hide();
+                        form.FormClosing += frm_closing;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tu cuenta está inactiva. Por favor, contacta al administrador.", "Cuenta inactiva", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Tu cuenta está inactiva. Por favor, contacta al administrador.", "Cuenta inactiva", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("No se encontró el usuario", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
             }
             else
             {
-                MessageBox.Show("No se encontró el usuario", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No se pudo establecer la conexión con la base de datos", "Error de conexión", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
 
         }
 

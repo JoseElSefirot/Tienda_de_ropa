@@ -169,14 +169,14 @@
             // SubMenuRegistrarCompra
             // 
             this.SubMenuRegistrarCompra.Name = "SubMenuRegistrarCompra";
-            this.SubMenuRegistrarCompra.Size = new System.Drawing.Size(180, 22);
+            this.SubMenuRegistrarCompra.Size = new System.Drawing.Size(134, 22);
             this.SubMenuRegistrarCompra.Text = "Registrar";
             this.SubMenuRegistrarCompra.Click += new System.EventHandler(this.SubMenuRegistrarCompra_Click);
             // 
             // SubMenuVerDetallesCompra
             // 
             this.SubMenuVerDetallesCompra.Name = "SubMenuVerDetallesCompra";
-            this.SubMenuVerDetallesCompra.Size = new System.Drawing.Size(180, 22);
+            this.SubMenuVerDetallesCompra.Size = new System.Drawing.Size(134, 22);
             this.SubMenuVerDetallesCompra.Text = "Ver Detalles";
             this.SubMenuVerDetallesCompra.Click += new System.EventHandler(this.SubMenuVerDetallesCompra_Click);
             // 
@@ -212,14 +212,14 @@
             // SubMenuReporteCompras
             // 
             this.SubMenuReporteCompras.Name = "SubMenuReporteCompras";
-            this.SubMenuReporteCompras.Size = new System.Drawing.Size(180, 22);
+            this.SubMenuReporteCompras.Size = new System.Drawing.Size(159, 22);
             this.SubMenuReporteCompras.Text = "Reporte compra";
             this.SubMenuReporteCompras.Click += new System.EventHandler(this.SubMenuReporteCompras_Click);
             // 
             // SubMenuReporteVenta
             // 
             this.SubMenuReporteVenta.Name = "SubMenuReporteVenta";
-            this.SubMenuReporteVenta.Size = new System.Drawing.Size(180, 22);
+            this.SubMenuReporteVenta.Size = new System.Drawing.Size(159, 22);
             this.SubMenuReporteVenta.Text = "Reporte Venta";
             this.SubMenuReporteVenta.Click += new System.EventHandler(this.SubMenuReporteVenta_Click);
             // 
@@ -249,7 +249,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.label2.BackColor = System.Drawing.Color.DarkTurquoise;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(738, 22);
@@ -261,7 +261,7 @@
             // LblUsuario
             // 
             this.LblUsuario.AutoSize = true;
-            this.LblUsuario.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.LblUsuario.BackColor = System.Drawing.Color.DarkTurquoise;
             this.LblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LblUsuario.ForeColor = System.Drawing.Color.White;
             this.LblUsuario.Location = new System.Drawing.Point(803, 22);

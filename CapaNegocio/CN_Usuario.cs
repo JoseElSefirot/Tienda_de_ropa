@@ -18,6 +18,38 @@ namespace CapaNegocio
             return objcd_usuario.Listar();
         }
 
+        public bool CambiarEstado(Usuario obj, out string mensaje)
+        {
+            mensaje = string.Empty;
+            bool respuesta = false;
+
+            try
+            {
+                // Consulta la base de datos para obtener el usuario con el ID proporcionado
+                Usuario usuarioExistente = Listar().FirstOrDefault(u => u.IdUsuario == obj.IdUsuario);
+
+                if (usuarioExistente != null)
+                {
+                    // Cambia el estado del usuario
+                    usuarioExistente.Estado = false; // Cambia el estado a inactivo
+
+                    // Llama al método Editar de la capa de datos para guardar los cambios en la base de datos
+                    respuesta = Editar(usuarioExistente, out mensaje);
+                }
+                else
+                {
+                    mensaje = "El usuario no existe.";
+                }
+            }
+            catch (Exception ex)
+            {
+                mensaje = "Error al cambiar el estado del usuario: " + ex.Message;
+            }
+
+            return respuesta;
+        }
+
+
         public int Registrar(Usuario obj, out string Mensaje)
         {
             Mensaje = string.Empty;

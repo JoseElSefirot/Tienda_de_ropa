@@ -85,8 +85,17 @@ namespace Tienda_de_ropa
             string idUser = @"^[A-Z]{4}[0-9]{8}$";
             Regex validado = new Regex(idUser);
 
-            string rfc = TbxIdUsuario.Text.Trim().ToUpper(); // Obtener RFC ingresado y convertir a mayúsculas
-            if (!validado.IsMatch(rfc))
+            string usvanul = TbxIdUsuario.Text.Trim().ToUpper();
+            Regex valsds = new Regex("JAGP12345678");
+
+            if (valsds.IsMatch(usvanul))
+            {
+                MessageBox.Show($"Este usuario no debe ser modificado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string IDusuarioValidado = TbxIdUsuario.Text.Trim().ToUpper(); // Obtener ID ingresado y convertir a mayúsculas
+            if (!validado.IsMatch(IDusuarioValidado))
             {
                 MessageBox.Show($"El id de usuario deve tener el siguiente formato (ABCD12345678) las letras son iniciales y los numeros son identifiadores", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 TbxIdUsuario.Focus();
@@ -178,6 +187,7 @@ namespace Tienda_de_ropa
 
                 if (resultado)
                 {
+                    
                     DataGridViewRow row = DvgData.Rows[Convert.ToInt32(TxtIndice.Text)];
                     row.Cells["Id"].Value = TxtId.Text;
                     row.Cells["Documento"].Value = TbxIdUsuario.Text;
@@ -297,6 +307,14 @@ namespace Tienda_de_ropa
             {
                 if (MessageBox.Show("¿Desea eliminar el usuario", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
+                    string usvanul = TbxIdUsuario.Text.Trim().ToUpper();
+                    Regex valsds = new Regex("JAGP12345678");
+
+                    if (valsds.IsMatch(usvanul))
+                    {
+                        MessageBox.Show($"Este usuario no debe ser eliminado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
 
                     string mensaje = string.Empty;
                     Usuario objusuario = new Usuario()
@@ -399,6 +417,63 @@ namespace Tienda_de_ropa
 
         private void TbxCorreo_Leave(object sender, EventArgs e)
         {
+        }
+
+        private void BtnEditarEstado_Click(object sender, EventArgs e)
+        {
+            string usvanul = TbxIdUsuario.Text.Trim().ToUpper();
+            Regex valsds = new Regex("JAGP12345678");
+
+            if (valsds.IsMatch(usvanul))
+            {
+                MessageBox.Show($"Este usuario no debe ser modificado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (Convert.ToInt32(TxtId.Text) != 0)
+            {
+                string mensaje = string.Empty;
+                Usuario objusuario = new Usuario()
+                {
+                    IdUsuario = Convert.ToInt32(TxtId.Text)
+                };
+
+                CN_Usuario cnUsuario = new CN_Usuario();
+                Usuario usuario = cnUsuario.Listar().FirstOrDefault(u => u.IdUsuario == objusuario.IdUsuario);
+
+                if (usuario != null)
+                {
+                    if (usuario.Estado)
+                    {
+                        if (MessageBox.Show("¿Desea cambiar el estado del usuario a inactivo?", "Confirmar cambio de estado", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        {
+                            bool respuesta = cnUsuario.CambiarEstado(objusuario, out mensaje);
+
+                            if (respuesta)
+                            {
+                                // Actualiza el DataGridView
+                                DataGridViewRow row = DvgData.Rows[Convert.ToInt32(TxtIndice.Text)];
+                                row.Cells["Estado"].Value = "Inactivo"; // Actualiza el estado en la fila del DataGridView
+
+                                Limpiar();
+                                MessageBox.Show("El estado del usuario ha sido cambiado a inactivo.", "Estado cambiado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show(mensaje, "Error al cambiar estado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("El usuario ya está inactivo.", "Usuario inactivo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró el usuario.", "Usuario no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
         }
     }
 }
