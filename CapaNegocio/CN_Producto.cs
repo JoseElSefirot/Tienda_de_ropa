@@ -18,6 +18,37 @@ namespace CapaNegocio
             return objcd_Producto.Listar();
         }
 
+        public bool CambiarEstado(Producto obj, out string mensaje)
+        {
+            mensaje = string.Empty;
+            bool respuesta = false;
+
+            try
+            {
+                // Consulta la base de datos para obtener el producto con el ID proporcionado
+                Producto productoExistente = Listar().FirstOrDefault(p => p.IdProducto == obj.IdProducto);
+
+                if (productoExistente != null)
+                {
+                    // Cambia el estado del producto
+                    productoExistente.Estado = false; // Cambia el estado a inactivo
+
+                    // Llama al método Editar de la capa de datos para guardar los cambios en la base de datos
+                    respuesta = Editar(productoExistente, out mensaje);
+                }
+                else
+                {
+                    mensaje = "El producto no existe.";
+                }
+            }
+            catch (Exception ex)
+            {
+                mensaje = "Error al cambiar el estado del producto: " + ex.Message;
+            }
+
+            return respuesta;
+        }
+
         public int Registrar(Producto obj, out string Mensaje)
         {
             Mensaje = string.Empty;
@@ -81,10 +112,11 @@ namespace CapaNegocio
             }
         }
 
-
         public bool Eliminar(Producto obj, out string Mensaje)
         {
             return objcd_Producto.Eliminar(obj, out Mensaje);
         }
+
+        
     }
 }

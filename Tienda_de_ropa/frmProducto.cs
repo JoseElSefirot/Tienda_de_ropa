@@ -276,7 +276,7 @@ namespace Tienda_de_ropa
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(TbxId.Text) != 0)
+            /*if (Convert.ToInt32(TbxId.Text) != 0)
             {
                 if (MessageBox.Show("¿Desea eliminar el producto", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -299,6 +299,34 @@ namespace Tienda_de_ropa
                         MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
 
+                }
+            }*/
+
+
+
+            if (Convert.ToInt32(TbxId.Text) != 0)
+            {
+                if (MessageBox.Show("¿Desea cambiar el estado del producto?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    string mensaje = string.Empty;
+                    Producto obj = new Producto()
+                    {
+                        IdProducto = Convert.ToInt32(TbxId.Text)
+                    };
+
+                    bool respuesta = new CN_Producto().CambiarEstado(obj, out mensaje);
+
+                    if (respuesta)
+                    {
+                        DataGridViewRow row = DvgData.Rows[Convert.ToInt32(TbxIndice.Text)];
+                        row.Cells["EstadoValor"].Value = 0; // Cambia el valor del estado a inactivo
+                        row.Cells["Estado"].Value = "No Activo"; // Actualiza la visualización del estado
+                        Limpiar();
+                    }
+                    else
+                    {
+                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
                 }
             }
         }
