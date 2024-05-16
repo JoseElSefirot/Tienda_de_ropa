@@ -302,8 +302,6 @@ namespace Tienda_de_ropa
                 }
             }*/
 
-
-
             if (Convert.ToInt32(TbxId.Text) != 0)
             {
                 if (MessageBox.Show("¿Desea cambiar el estado del producto?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)

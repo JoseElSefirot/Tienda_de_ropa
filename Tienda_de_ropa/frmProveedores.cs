@@ -217,7 +217,7 @@ namespace Tienda_de_ropa
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(txtid.Text) != 0)
+            /*if (Convert.ToInt32(txtid.Text) != 0)
             {
                 if (MessageBox.Show("¿Desea eliminar el proveedor", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -240,6 +240,33 @@ namespace Tienda_de_ropa
                         MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
 
+                }
+            }*/
+            if (Convert.ToInt32(TbxIdProveedor.Text) != 0)
+            {
+                if (MessageBox.Show("¿Desea cambiar el estado del proveedor?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    string mensaje = string.Empty;
+                    Proveedor obj = new Proveedor()
+                    {
+                        IdProveedor = Convert.ToInt32(TbxIdProveedor.Text)
+                    };
+
+                    bool respuesta = new CN_Proveedor().CambiarEstado(obj, out mensaje);
+
+                    if (respuesta)
+                    {
+                        // Realiza alguna acción después de cambiar el estado, como actualizar la visualización en la tabla
+                        // Puedes cambiar el texto de un botón, actualizar un campo en la tabla, etc.
+                        // Por ejemplo:
+                        DataGridViewRow row = DvgData.Rows[Convert.ToInt32(txtid.Text)];
+                        row.Cells["Estado"].Value = "Inactivo"; // Cambia el texto del estado a "Inactivo"
+                        Limpiar();
+                    }
+                    else
+                    {
+                        MessageBox.Show(mensaje, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
                 }
             }
         }

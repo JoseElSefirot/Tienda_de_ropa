@@ -18,6 +18,37 @@ namespace CapaNegocio
             return objcd_Proveedor.Listar();
         }
 
+        public bool CambiarEstado(Proveedor obj, out string mensaje)
+        {
+            mensaje = string.Empty;
+            bool respuesta = false;
+
+            try
+            {
+                // Consulta la base de datos para obtener el proveedor con el ID proporcionado
+                Proveedor proveedorExistente = Listar().FirstOrDefault(p => p.IdProveedor == obj.IdProveedor);
+
+                if (proveedorExistente != null)
+                {
+                    // Cambia el estado del proveedor
+                    proveedorExistente.Estado = !proveedorExistente.Estado; // Cambia el estado
+
+                    // Llama al método Editar de la capa de datos para guardar los cambios en la base de datos
+                    respuesta = objcd_Proveedor.Editar(proveedorExistente, out mensaje);
+                }
+                else
+                {
+                    mensaje = "El proveedor no existe.";
+                }
+            }
+            catch (Exception ex)
+            {
+                mensaje = "Error al cambiar el estado del proveedor: " + ex.Message;
+            }
+
+            return respuesta;
+        }
+
         public int Registrar(Proveedor obj, out string Mensaje)
         {
             Mensaje = string.Empty;
